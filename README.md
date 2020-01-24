@@ -1,5 +1,7 @@
 # Flutter app to estimate the price of Civil Engineering Projects
 
+![](https://github.com/manoellribeiro/budget-CivilEngineeringProjects/blob/master/images/appReview.png)
+
 ## About this Project
 
 This project was made to simplify and optimize the budgeting process in a Junior Company called _Engetec Engenharia Jr_
@@ -47,4 +49,8 @@ I'm really glad if you want to contribute with my project and help me to improve
 * Connect with me at [LinkedIn.](https://www.linkedin.com/in/manoel-ribeiro-06aa43134/)
 
 Thank you.
+
+## License
+
+This project is licensed under the MIT License - See the [LICENSE.md](https://github.com/manoellribeiro/budget-CivilEngineeringProjects/blob/master/LICENSE) for details. 
 
