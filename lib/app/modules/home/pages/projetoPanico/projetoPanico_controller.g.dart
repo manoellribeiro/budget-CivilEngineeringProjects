@@ -103,23 +103,6 @@ mixin _$ProjetoPanicoController on _ProjetoPanicoBase, Store {
     }, _$thereIsQuantityAtom, name: '${_$thereIsQuantityAtom.name}_set');
   }
 
-  final _$infoTextAtom = Atom(name: '_ProjetoPanicoBase.infoText');
-
-  @override
-  String get infoText {
-    _$infoTextAtom.context.enforceReadPolicy(_$infoTextAtom);
-    _$infoTextAtom.reportObserved();
-    return super.infoText;
-  }
-
-  @override
-  set infoText(String value) {
-    _$infoTextAtom.context.conditionallyRunInAction(() {
-      super.infoText = value;
-      _$infoTextAtom.reportChanged();
-    }, _$infoTextAtom, name: '${_$infoTextAtom.name}_set');
-  }
-
   final _$_ProjetoPanicoBaseActionController =
       ActionController(name: '_ProjetoPanicoBase');
 

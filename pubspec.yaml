@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  url_launcher: ^5.4.1
   http: ^0.12.0+4
   firebase_messaging: ^6.0.9
   cloud_firestore: ^0.13.0+1
@@ -49,6 +50,8 @@ dev_dependencies:
 flutter:
   assets:
     - images/logo.jpg
+    - images/logobranco.jpeg
+    - images/manoel.jpeg
     - images/arquitetonico.png
     - images/levantamento.png
     - images/eletrico.png

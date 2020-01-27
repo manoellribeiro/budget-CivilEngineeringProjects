@@ -83,14 +83,11 @@ abstract class _ProjetoEletricoBase with Store {
     }
   }
 
-  @observable
-  String infoText = "Informe os dados para precificação";
 
   @action
   void calculatePrice(){
     double area = double.parse(areaValue);
     estimateValue = (area*4*distributionPanelsIndex*thereIsFloorPlanIndex*propertyStandardIndex) + transportCosts + plotingCosts + othersCosts + fixCosts;
-    infoText = "A estimativa de preço é $estimateValue reais";
   }
 
   String validateArea(){

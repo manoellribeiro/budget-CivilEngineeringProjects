@@ -1,3 +1,4 @@
+import 'package:hive/hive.dart';
 import 'package:mobx/mobx.dart';
 import 'package:precificacaodeprojetos/app/modules/home/models/budget_model.dart';
 import 'package:precificacaodeprojetos/app/modules/home/services/local_storage_service.dart';
@@ -35,7 +36,6 @@ abstract class _ParcialReviewBase with Store {
       return false;
     }
   }
-
 
   init()async{
     final allList = await service.getAllBudgets();

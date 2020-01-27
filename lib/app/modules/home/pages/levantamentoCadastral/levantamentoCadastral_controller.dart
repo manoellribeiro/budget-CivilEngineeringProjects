@@ -19,9 +19,6 @@ abstract class _LevantamentoCadastralBase with Store {
 
 
   @observable
-  String infoText = "Informe os dados para precificação";
-
-  @observable
   String areaValue;
 
   @action
@@ -33,7 +30,6 @@ abstract class _LevantamentoCadastralBase with Store {
   void calculatePrice(BuildContext context){
     double area = double.parse(areaValue);
     estimateValue = (area*pricePerSquareMeter) + transportCosts + plotingCosts + fixCosts;
-    infoText = "A estimativa de preço é $estimateValue reais";
   }
 
 

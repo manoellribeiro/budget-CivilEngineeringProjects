@@ -114,14 +114,10 @@ abstract class _ProjetoHidrossanitarioBase with Store {
     }
   }
 
-  @observable
-  String infoText = "Informe os dados para precificação";
-
   @action
   void calculatePrice() {
     double area = double.parse(areaValue);
     estimateValue = (area*pricePerSquareMeter*quantityOfWetAreasIndex*thereIsFloorPlanIndex*propertyStandardIndex*projectOfHotWaterIndex*projectOfReuseOfWaterIndex) + transportCosts + plotingCosts + othersCosts + fixCosts;
-    infoText = "A estimativa de preço é $estimateValue reais";
   }
 
   String validateArea(){

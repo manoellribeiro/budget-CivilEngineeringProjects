@@ -16,23 +16,6 @@ mixin _$LevantamentoCadastralController on _LevantamentoCadastralBase, Store {
       (_$validateFormComputed ??= Computed<bool>(() => super.validateForm))
           .value;
 
-  final _$infoTextAtom = Atom(name: '_LevantamentoCadastralBase.infoText');
-
-  @override
-  String get infoText {
-    _$infoTextAtom.context.enforceReadPolicy(_$infoTextAtom);
-    _$infoTextAtom.reportObserved();
-    return super.infoText;
-  }
-
-  @override
-  set infoText(String value) {
-    _$infoTextAtom.context.conditionallyRunInAction(() {
-      super.infoText = value;
-      _$infoTextAtom.reportChanged();
-    }, _$infoTextAtom, name: '${_$infoTextAtom.name}_set');
-  }
-
   final _$areaValueAtom = Atom(name: '_LevantamentoCadastralBase.areaValue');
 
   @override

@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
             IconButton(
               icon: Icon(Icons.info_outline, color: Colors.white,),
               onPressed: (){
-                print("Precificações Concluídas");
+                Navigator.pushNamed(context, '/info');
               },
             ),
             Text("Info", style: TextStyle(color: Colors.white), textAlign: TextAlign.center,),

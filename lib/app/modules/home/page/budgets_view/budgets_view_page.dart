@@ -64,7 +64,6 @@ class _BudgetsViewPageState extends State<BudgetsViewPage> {
             IconButton(
               icon: Icon(Icons.playlist_add_check, color: Colors.white,),
               onPressed: (){
-                print("Precificações Concluídas");
               },
             ),
             Text("Precificações Concluídas", style: TextStyle(color: Colors.white), textAlign: TextAlign.center,),
@@ -74,7 +73,8 @@ class _BudgetsViewPageState extends State<BudgetsViewPage> {
             IconButton(
               icon: Icon(Icons.info_outline, color: Colors.white,),
               onPressed: (){
-                print("Precificações Concluídas");
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/info');
               },
             ),
             Text("Info", style: TextStyle(color: Colors.white), textAlign: TextAlign.center,),
@@ -178,7 +178,7 @@ class _BudgetsViewPageState extends State<BudgetsViewPage> {
                                       Container(
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.all(Radius.circular(10)),
-                                            color: Color(0xff32425d)
+                                            color: Colors.redAccent
                                         ),
                                         height: screenWidht*0.08,
                                         child: Center(child: Row(
@@ -194,7 +194,7 @@ class _BudgetsViewPageState extends State<BudgetsViewPage> {
                                       Container(
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.all(Radius.circular(10)),
-                                            color: Color(0xff32425d)
+                                            color: Colors.redAccent
                                         ),
                                         height: screenWidht*0.07,
                                         child: Center(child: Row(
@@ -210,7 +210,7 @@ class _BudgetsViewPageState extends State<BudgetsViewPage> {
                                       Container(
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.all(Radius.circular(10)),
-                                            color: Color(0xff32425d)
+                                            color: Colors.redAccent
                                         ),
                                         height: screenWidht*0.07,
                                         child: Center(child: Row(
@@ -226,7 +226,7 @@ class _BudgetsViewPageState extends State<BudgetsViewPage> {
                                       Container(
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.all(Radius.circular(10)),
-                                            color: Color(0xff32425d)
+                                            color: Colors.redAccent
                                         ),
                                         height: screenWidht*0.07,
                                         child: Center(child: Row(

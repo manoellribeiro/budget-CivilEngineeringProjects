@@ -65,6 +65,9 @@ class _LevantamentoCadastralPageState extends State<LevantamentoCadastralPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 SizedBox(child: Image.asset('images/levantamento.png'), width: screenWidht*0.1, height: screenHeight*0.2,),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                ),
                 Observer(
                   builder: (_){
                     return TextFieldWidget(
@@ -92,15 +95,6 @@ class _LevantamentoCadastralPageState extends State<LevantamentoCadastralPage> {
                     )
                   ),
                 ),
-                Observer(
-                  builder: (_){
-                    return Text(
-                      controller.infoText,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Color(0xff42a44f), fontSize: 25.0),
-                    );
-                  },
-                )
               ],
             ),
           )),

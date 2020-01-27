@@ -13,11 +13,46 @@ class TextFieldWidget extends StatelessWidget {
       onChanged: onChanged,
       keyboardType: keyboardType,
       decoration: InputDecoration(
+         contentPadding: EdgeInsets.symmetric(vertical: 0),
           errorText: errorFunction == null ? null : errorFunction,
+          errorBorder:  OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.grey
+            ),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(15),
+              bottomRight: Radius.circular(15),
+              bottomLeft: Radius.circular(15),
+            ),
+          ),
           labelText: text,
-          labelStyle: TextStyle(color: Colors.black , fontSize: 25.0)),
+          labelStyle: TextStyle(color: Colors.grey, fontSize: 15.0),
+          border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.grey
+            ),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(15),
+              bottomRight: Radius.circular(15),
+              bottomLeft: Radius.circular(15),
+            ),
+          ),
+          prefixIcon: Container(
+            child: Icon(Icons.border_color, color: Colors.white),
+            decoration: BoxDecoration(
+                color: Color(0xff32425d),
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(15),
+                  bottomLeft: Radius.circular(15),
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                )
+            ),
+          ),),
       textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 25.0, color: Color(0xff42a44f)),
+      style: TextStyle(fontSize: 25.0, color: Colors.black),
     );
   }
 }

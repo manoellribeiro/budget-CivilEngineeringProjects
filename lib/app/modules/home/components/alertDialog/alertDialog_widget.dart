@@ -49,6 +49,15 @@ class AlertDialogWidget extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              ListTile(
+                leading: Icon(Icons.monetization_on),
+                title: Text("Preço Total"),
+                subtitle: Text("$estimateValue reais"),
+              ),
+              Divider(
+                color: Colors.grey,
+                thickness: 2,
+              ),
               Center(child: Text("Custos")),
               Divider(
                 color: Colors.grey,
@@ -73,15 +82,6 @@ class AlertDialogWidget extends StatelessWidget {
                 title: Text("Fixos"),
                 subtitle: Text("$fixCost reais"),
               ),
-              Divider(
-                color: Colors.grey,
-                thickness: 2,
-              ),
-              ListTile(
-                leading: Icon(Icons.monetization_on),
-                title: Text("Preço Total"),
-                subtitle: Text("$estimateValue reais"),
-              ),
             ],
           ),
         ),
@@ -90,11 +90,11 @@ class AlertDialogWidget extends StatelessWidget {
         FlatButton(
           child: Text("Refazer"),
           onPressed: (){
-            Navigator.popAndPushNamed(context, routeName);
+            Navigator.pop(context, routeName);
           },
         ),
         FlatButton(
-          child: Text("Salvar"),
+          child: Text("Salvar e continuar precificando"),
           onPressed: (){
             budgetModel.name = title;
             budgetModel.imageLocation = imageLocation;
@@ -104,6 +104,21 @@ class AlertDialogWidget extends StatelessWidget {
             budgetModel.othersCosts = othersCost;
             budgetModel.fixCosts = fixCost;
             service.add(budgetModel);
+            Navigator.of(context).pushNamedAndRemoveUntil('/home', (Route<dynamic> route)=> false);
+          },
+        ),
+        FlatButton(
+          child: Text("Salvar e ir pro relatório parcial"),
+          onPressed: (){
+            budgetModel.name = title;
+            budgetModel.imageLocation = imageLocation;
+            budgetModel.estimateValue = estimateValue;
+            budgetModel.transportCosts = transportationCost;
+            budgetModel.plotingCosts = plotingCost;
+            budgetModel.othersCosts = othersCost;
+            budgetModel.fixCosts = fixCost;
+            service.add(budgetModel);
+            Navigator.of(context).pushNamedAndRemoveUntil('/parcialReview', (Route<dynamic> route)=> false);
           },
         )
       ],

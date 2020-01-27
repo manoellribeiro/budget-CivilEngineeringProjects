@@ -23,7 +23,7 @@ Before I made this app the budgeting process used to be made with an Excel sheet
 * Estimate the price of five Civil Engineering Projects with specific variables for each projects, as the Building Standard or how many Floor Plans.
 * Estimate the price of only one project or how many you want to.
 * See the prices of all projects together in partial review page that only you can see.
-* Save the budget of one client when you want to, so I members with this application can see It.
+* Save the budget of one client when you want to, so all members with this application can see it.
 
 ## Built With
 
@@ -52,5 +52,5 @@ Thank you.
 
 ## License
 
-This project is licensed under the MIT License - See the [LICENSE.md](https://github.com/manoellribeiro/budget-CivilEngineeringProjects/blob/master/LICENSE) for details. 
+This project is licensed under the MIT License - See the [LICENSE.md](https://github.com/manoellribeiro/budget-CivilEngineeringProjects/blob/master/LICENSE) for details.
 

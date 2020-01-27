@@ -85,23 +85,6 @@ mixin _$ProjetoEletricoController on _ProjetoEletricoBase, Store {
     }, _$thereIsFloorPlanAtom, name: '${_$thereIsFloorPlanAtom.name}_set');
   }
 
-  final _$infoTextAtom = Atom(name: '_ProjetoEletricoBase.infoText');
-
-  @override
-  String get infoText {
-    _$infoTextAtom.context.enforceReadPolicy(_$infoTextAtom);
-    _$infoTextAtom.reportObserved();
-    return super.infoText;
-  }
-
-  @override
-  set infoText(String value) {
-    _$infoTextAtom.context.conditionallyRunInAction(() {
-      super.infoText = value;
-      _$infoTextAtom.reportChanged();
-    }, _$infoTextAtom, name: '${_$infoTextAtom.name}_set');
-  }
-
   final _$_ProjetoEletricoBaseActionController =
       ActionController(name: '_ProjetoEletricoBase');
 

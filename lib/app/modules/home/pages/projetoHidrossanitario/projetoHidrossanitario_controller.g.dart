@@ -123,23 +123,6 @@ mixin _$ProjetoHidrossanitarioController on _ProjetoHidrossanitarioBase, Store {
         name: '${_$projectOfReuseOfWaterAtom.name}_set');
   }
 
-  final _$infoTextAtom = Atom(name: '_ProjetoHidrossanitarioBase.infoText');
-
-  @override
-  String get infoText {
-    _$infoTextAtom.context.enforceReadPolicy(_$infoTextAtom);
-    _$infoTextAtom.reportObserved();
-    return super.infoText;
-  }
-
-  @override
-  set infoText(String value) {
-    _$infoTextAtom.context.conditionallyRunInAction(() {
-      super.infoText = value;
-      _$infoTextAtom.reportChanged();
-    }, _$infoTextAtom, name: '${_$infoTextAtom.name}_set');
-  }
-
   final _$_ProjetoHidrossanitarioBaseActionController =
       ActionController(name: '_ProjetoHidrossanitarioBase');
 

@@ -167,15 +167,6 @@ class _ProjetoHidrossanitarioPageState
                     },
                   )
                 ),
-                Observer(
-                  builder: (_){
-                    return Text(
-                      controller.infoText,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.blueAccent, fontSize: 25.0),
-                    );
-                  },
-                )
               ],
             ),
           )),

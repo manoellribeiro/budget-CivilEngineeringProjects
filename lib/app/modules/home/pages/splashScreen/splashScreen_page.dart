@@ -37,7 +37,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("images/logo.jpg"),
-                        fit: BoxFit.cover
+                        fit: BoxFit.contain
                     )
                 ),
               ),

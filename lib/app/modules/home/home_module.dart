@@ -1,3 +1,5 @@
+import 'package:precificacaodeprojetos/app/modules/home/pages/info/info_controller.dart';
+import 'package:precificacaodeprojetos/app/modules/home/pages/info/info_page.dart';
 import 'package:precificacaodeprojetos/app/modules/home/services/notifications_service.dart';
 import 'package:precificacaodeprojetos/app/modules/home/page/budgets_view/budgets_view_controller.dart';
 import 'package:precificacaodeprojetos/app/modules/home/page/budgets_view/budgets_view_page.dart';
@@ -24,6 +26,7 @@ import 'package:precificacaodeprojetos/app/modules/home/pages/projetoPanico/proj
 class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
+        Bind((i) => InfoController()),
         Bind((i) => NotificationsService()),
         Bind((i) => BudgetsViewController()),
         Bind((i) => FirebaseService()),
@@ -50,6 +53,7 @@ class HomeModule extends ChildModule {
         Router('/panico', child: (_, args) => ProjetoPanicoPage()),
         Router('/parcialReview', child: (_, args) => ParcialReviewPage()),
         Router('/budgetView', child: (_, args) => BudgetsViewPage()),
+        Router('/info', child: (_, args) => InfoPage()),
       ];
 
   static Inject get to => Inject<HomeModule>.of();

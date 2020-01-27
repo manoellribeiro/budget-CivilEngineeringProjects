@@ -87,23 +87,6 @@ mixin _$ProjetoArquitetonicoController on _ProjetoArquitetonicoBase, Store {
     }, _$hintText2Atom, name: '${_$hintText2Atom.name}_set');
   }
 
-  final _$infoTextAtom = Atom(name: '_ProjetoArquitetonicoBase.infoText');
-
-  @override
-  String get infoText {
-    _$infoTextAtom.context.enforceReadPolicy(_$infoTextAtom);
-    _$infoTextAtom.reportObserved();
-    return super.infoText;
-  }
-
-  @override
-  set infoText(String value) {
-    _$infoTextAtom.context.conditionallyRunInAction(() {
-      super.infoText = value;
-      _$infoTextAtom.reportChanged();
-    }, _$infoTextAtom, name: '${_$infoTextAtom.name}_set');
-  }
-
   final _$_ProjetoArquitetonicoBaseActionController =
       ActionController(name: '_ProjetoArquitetonicoBase');
 
