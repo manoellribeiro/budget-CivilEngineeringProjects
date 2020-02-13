@@ -9,11 +9,11 @@ abstract class _ProjetoPanicoBase with Store {
 
 
   double estimateValue;
-  double pricePerSquareMeter = 4.5;
-  double transportCosts = 50;
-  double plotingCosts = 40;
+  double pricePerSquareMeter = 9.5;
+  double transportCosts = 90;
+  double plotingCosts = 50;
   double othersCosts = 90;
-  double fixCosts = 70;
+  double fixCosts = 150;
 
 
   double propertyStandardIndex = 1;
@@ -50,13 +50,13 @@ abstract class _ProjetoPanicoBase with Store {
     if (hintText == "Baixo"){
       propertyStandardIndex = 1;
     } else if (hintText == "Médio"){
-      propertyStandardIndex = 1.3;
+      propertyStandardIndex = 1.6;
     } else if (hintText == "Alto"){
-      propertyStandardIndex = 1.4;
+      propertyStandardIndex = 1.9;
     } else if (hintText == "Comercial"){
-      propertyStandardIndex = 1.3;
+      propertyStandardIndex = 1.7;
     } else if (hintText == "Industrial"){
-      propertyStandardIndex = 1.5;
+      propertyStandardIndex = 2;
     }
   }
 
@@ -84,7 +84,7 @@ abstract class _ProjetoPanicoBase with Store {
 
   void thereIsProjectOfSPDA(){
     if(projectOfSPDA == true){
-      projectOfSPADIndex = 1.5;
+      projectOfSPADIndex = 2;
     }else {
       projectOfSPADIndex = 1.0;
     }
@@ -110,7 +110,7 @@ abstract class _ProjetoPanicoBase with Store {
   @action
   void calculatePrice() {
     double area = double.parse(areaValue);
-    estimateValue = (area*(pricePerSquareMeter)*thereIsFloorPlanIndex*propertyStandardIndex*projectOfSPADIndex*budgetAndQuantityIndex) + transportCosts + plotingCosts + othersCosts + fixCosts;
+    estimateValue = double.parse(((area*pricePerSquareMeter*thereIsFloorPlanIndex*propertyStandardIndex*projectOfSPADIndex*budgetAndQuantityIndex)+ (area*pricePerSquareMeter*0.05)+ (area*pricePerSquareMeter*0.01) + transportCosts + plotingCosts + othersCosts + fixCosts).toStringAsFixed(2));
   }
 
   String validateArea(){

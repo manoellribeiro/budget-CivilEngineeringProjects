@@ -7,15 +7,15 @@ class ProjetoHidrossanitarioController = _ProjetoHidrossanitarioBase
 
 abstract class _ProjetoHidrossanitarioBase with Store {
   double estimateValue;
-  double pricePerSquareMeter = 6;
-  double transportCosts = 50;
-  double plotingCosts = 40;
+  double pricePerSquareMeter = 9;
+  double transportCosts = 90;
+  double plotingCosts = 50;
   double othersCosts = 90;
-  double fixCosts = 70;
+  double fixCosts = 150;
 
 
   double propertyStandardIndex = 1;
-  double quantityOfWetAreasIndex = 1;
+  double quantityOfWetAreasIndex = 1.2;
   double thereIsFloorPlanIndex = 1.0;
   double projectOfHotWaterIndex = 1;
   double projectOfReuseOfWaterIndex = 1;
@@ -43,11 +43,11 @@ abstract class _ProjetoHidrossanitarioBase with Store {
   @action
   void quantityOfWetAreasMethod (){
     if (hintText == "De 1 à 3"){
-      quantityOfWetAreasIndex = 1;
-    } else if (hintText == "De 3 à 5"){
       quantityOfWetAreasIndex = 1.2;
+    } else if (hintText == "De 3 à 5"){
+      quantityOfWetAreasIndex = 1.7;
     } else if (hintText == "Maior que 5"){
-      quantityOfWetAreasIndex = 1.3;
+      quantityOfWetAreasIndex = 1.9;
     }
 
   }
@@ -60,13 +60,13 @@ abstract class _ProjetoHidrossanitarioBase with Store {
     if (hintText2 == "Baixo"){
       propertyStandardIndex = 1;
     } else if (hintText2 == "Médio"){
-      propertyStandardIndex = 1.3;
+      propertyStandardIndex = 1.6;
     } else if (hintText2 == "Alto"){
-      propertyStandardIndex = 1.4;
+      propertyStandardIndex = 1.9;
     } else if (hintText2 == "Comercial"){
-      propertyStandardIndex = 1.3;
+      propertyStandardIndex = 1.7;
     } else if (hintText2 == "Industrial"){
-      propertyStandardIndex = 1.5;
+      propertyStandardIndex = 2;
     }
   }
 
@@ -93,7 +93,7 @@ abstract class _ProjetoHidrossanitarioBase with Store {
 
   void projectOfHotWaterMethod(){
     if(projectOfHotWater == true){
-      projectOfHotWaterIndex = 1.2;
+      projectOfHotWaterIndex = 1.5;
     }else {
       projectOfHotWaterIndex = 1.0;
     }
@@ -108,7 +108,7 @@ abstract class _ProjetoHidrossanitarioBase with Store {
 
   void projectOfReuseOfWaterMethod(){
     if(projectOfReuseOfWater == true){
-      projectOfReuseOfWaterIndex = 1.5;
+      projectOfReuseOfWaterIndex = 1.7;
     }else {
       projectOfReuseOfWaterIndex = 1.0;
     }
@@ -117,7 +117,7 @@ abstract class _ProjetoHidrossanitarioBase with Store {
   @action
   void calculatePrice() {
     double area = double.parse(areaValue);
-    estimateValue = (area*pricePerSquareMeter*quantityOfWetAreasIndex*thereIsFloorPlanIndex*propertyStandardIndex*projectOfHotWaterIndex*projectOfReuseOfWaterIndex) + transportCosts + plotingCosts + othersCosts + fixCosts;
+    estimateValue = double.parse(((area*pricePerSquareMeter*quantityOfWetAreasIndex*thereIsFloorPlanIndex*propertyStandardIndex*projectOfHotWaterIndex*projectOfReuseOfWaterIndex)+ (area*pricePerSquareMeter*0.05)+ (area*pricePerSquareMeter*0.01) + transportCosts + plotingCosts + othersCosts + fixCosts).toStringAsFixed(2));
   }
 
   String validateArea(){

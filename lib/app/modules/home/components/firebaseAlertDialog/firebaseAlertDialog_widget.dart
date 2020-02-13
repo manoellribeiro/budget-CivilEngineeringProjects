@@ -56,7 +56,7 @@ class _FirebaseAlertDialogWidgetState extends State<FirebaseAlertDialogWidget> {
                 topRight: Radius.circular(20),
               )
           ),
-          child: Center(child: Text("Deseja Salvar a precificação?", style: TextStyle(color: Colors.white, fontSize: 20),)) ),
+          child: Center(child: Text("Deseja salvar a precificação?", style: TextStyle(color: Colors.white, fontSize: 20),)) ),
       content: Form(
         key: _formKey,
         child: TextFormField(
@@ -73,39 +73,18 @@ class _FirebaseAlertDialogWidgetState extends State<FirebaseAlertDialogWidget> {
           keyboardType: TextInputType.text,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.symmetric(vertical: 0),
-            prefixIcon: Container(
-              child: Icon(Icons.perm_identity, color: Colors.white),
-              decoration: BoxDecoration(
-                  color: Color(0xff32425d),
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(15),
-                    bottomLeft: Radius.circular(15),
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                  )
-              ),
-            ),
+            prefixIcon: Icon(Icons.perm_identity, color: Colors.grey),
               border: OutlineInputBorder(
                 borderSide: BorderSide(
                     color: Colors.grey
                 ),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
-                  bottomRight: Radius.circular(15),
-                  bottomLeft: Radius.circular(15),
-                ),
+                borderRadius: BorderRadius.all(Radius.circular(5)),
               ),
               errorBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                     color: Colors.grey
                 ),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
-                  bottomRight: Radius.circular(15),
-                  bottomLeft: Radius.circular(15),
-                ),
+                borderRadius: BorderRadius.all(Radius.circular(5)),
               ),
               labelText: "Cliente",
               labelStyle: TextStyle(color: Colors.grey , fontSize: 15.0)),
@@ -131,6 +110,7 @@ class _FirebaseAlertDialogWidgetState extends State<FirebaseAlertDialogWidget> {
                   i++;
                 }
                 sendNotification();
+                budgetsBox.clear();
                 Navigator.pushReplacementNamed(context, '/budgetView');
               }
             }

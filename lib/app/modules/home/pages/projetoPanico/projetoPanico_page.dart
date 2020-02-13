@@ -78,7 +78,7 @@ class _ProjetoPanicoPageState extends State<ProjetoPanicoPage> {
                   builder: (_){
                     return CheckboxListTile(
                       value: controller.thereIsQuantity,
-                      title: Text("Orçamento e Quantitativo de materiais", style: TextStyle(fontSize: 15.0),),
+                      title: Text("Quantitativo de materiais", style: TextStyle(fontSize: 15.0),),
                       onChanged: (value){
                         controller.changeThereIsQuantity(value);
                         controller.thereIsQuantityMethod();

@@ -9,11 +9,11 @@ abstract class _ProjetoEletricoBase with Store {
 
 
   double estimateValue;
-  double pricePerSquareMeter = 5;
-  double transportCosts = 50;
-  double plotingCosts = 40;
+  double pricePerSquareMeter = 7;
+  double transportCosts = 90;
+  double plotingCosts = 50;
   double othersCosts = 90;
-  double fixCosts = 70;
+  double fixCosts = 150;
   double distributionPanelsIndex = 1.0;
   double propertyStandardIndex = 1.0;
   double thereIsFloorPlanIndex = 1.0;
@@ -43,9 +43,9 @@ abstract class _ProjetoEletricoBase with Store {
     if (hintText == "1"){
       distributionPanelsIndex = 1;
     } else if (hintText == "2"){
-      distributionPanelsIndex = 1.2;
+      distributionPanelsIndex = 1.4;
     } else if (hintText == "3+"){
-      distributionPanelsIndex = 1.3;
+      distributionPanelsIndex = 1.8;
     }
   }
 
@@ -58,13 +58,13 @@ abstract class _ProjetoEletricoBase with Store {
     if (hintText2 == "Baixo"){
       propertyStandardIndex = 1;
     } else if (hintText2 == "Médio"){
-      propertyStandardIndex = 1.3;
+      propertyStandardIndex = 1.6;
     } else if (hintText2 == "Alto"){
-      propertyStandardIndex = 1.4;
+      propertyStandardIndex = 1.9;
     } else if (hintText2 == "Comercial"){
-      propertyStandardIndex = 1.3;
+      propertyStandardIndex = 1.7;
     } else if (hintText2 == "Industrial"){
-      propertyStandardIndex = 1.5;
+      propertyStandardIndex = 2;
     }
   }
 
@@ -87,7 +87,7 @@ abstract class _ProjetoEletricoBase with Store {
   @action
   void calculatePrice(){
     double area = double.parse(areaValue);
-    estimateValue = (area*4*distributionPanelsIndex*thereIsFloorPlanIndex*propertyStandardIndex) + transportCosts + plotingCosts + othersCosts + fixCosts;
+    estimateValue = double.parse(((area*pricePerSquareMeter*distributionPanelsIndex*thereIsFloorPlanIndex*propertyStandardIndex) + (area*pricePerSquareMeter*0.01)+ (area*pricePerSquareMeter*0.05) + transportCosts + plotingCosts + othersCosts + fixCosts).toStringAsFixed(2));
   }
 
   String validateArea(){

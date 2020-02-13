@@ -11,11 +11,11 @@ class LevantamentoCadastralController = _LevantamentoCadastralBase
 abstract class _LevantamentoCadastralBase with Store {
 
   double estimateValue;
-  double pricePerSquareMeter = 4;
-  double transportCosts = 50;
-  double plotingCosts = 40;
+  double pricePerSquareMeter = 5;
+  double transportCosts = 90;
+  double plotingCosts = 50;
   double othersCosts = 90;
-  double fixCosts = 70;
+  double fixCosts = 150;
 
 
   @observable
@@ -29,7 +29,7 @@ abstract class _LevantamentoCadastralBase with Store {
   @action
   void calculatePrice(BuildContext context){
     double area = double.parse(areaValue);
-    estimateValue = (area*pricePerSquareMeter) + transportCosts + plotingCosts + fixCosts;
+    estimateValue = double.parse(((area*pricePerSquareMeter) + (area*pricePerSquareMeter*0.01) + transportCosts + plotingCosts + fixCosts + (area*pricePerSquareMeter)*0.05).toStringAsFixed(2));
   }
 
 

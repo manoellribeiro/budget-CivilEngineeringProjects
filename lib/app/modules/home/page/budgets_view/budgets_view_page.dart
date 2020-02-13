@@ -135,7 +135,7 @@ class _BudgetsViewPageState extends State<BudgetsViewPage> {
                                 ],
                               )),
                             ),
-                            Text("Cliente: ${docs["clientName"]}", style: TextStyle(color: Colors.black),),
+                            Text("${docs["clientName"]}", style: TextStyle(color: Colors.black),),
                             IconButton(
                               icon: Icon(Icons.arrow_drop_down_circle),
                               onPressed: (){

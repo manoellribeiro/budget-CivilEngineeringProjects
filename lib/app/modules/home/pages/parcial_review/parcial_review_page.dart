@@ -160,7 +160,7 @@ class _ParcialReviewPageState extends State<ParcialReviewPage> {
                             height: screenWidht*0.08,
                             child: Center(child: Row(
                               children: <Widget>[
-                                Icon(Icons.directions_car, color: Colors.white,),
+                                Icon(Icons.directions_car, color: Colors.white, size: 20),
                                 Text("${budgetModel.transportCosts}", style: TextStyle(color: Colors.white),),
                                 Padding(
                                   padding: EdgeInsets.only(right: 5),
@@ -178,7 +178,7 @@ class _ParcialReviewPageState extends State<ParcialReviewPage> {
                               height: screenWidht*0.08,
                               child: Center(child: Row(
                                 children: <Widget>[
-                                  Icon(Icons.print, color: Colors.white,),
+                                  Icon(Icons.print, color: Colors.white, size: 20),
                                   Text("${budgetModel.plotingCosts}", style: TextStyle(color: Colors.white),),
                                   Padding(
                                     padding: EdgeInsets.only(right: 5),
@@ -195,7 +195,7 @@ class _ParcialReviewPageState extends State<ParcialReviewPage> {
                             height: screenWidht*0.08,
                             child: Center(child: Row(
                               children: <Widget>[
-                                Icon(Icons.class_, color: Colors.white,),
+                                Icon(Icons.class_, color: Colors.white, size: 20),
                                 Text("${budgetModel.othersCosts}", style: TextStyle(color: Colors.white),),
                                 Padding(
                                   padding: EdgeInsets.only(right: 5),
@@ -213,7 +213,7 @@ class _ParcialReviewPageState extends State<ParcialReviewPage> {
                               height: screenWidht*0.08,
                               child: Center(child: Row(
                                 children: <Widget>[
-                                  Icon(Icons.business, color: Colors.white,),
+                                  Icon(Icons.business, color: Colors.white, size: 20),
                                   Text("${budgetModel.fixCosts}", style: TextStyle(color: Colors.white),),
                                   Padding(
                                     padding: EdgeInsets.only(right: 5),

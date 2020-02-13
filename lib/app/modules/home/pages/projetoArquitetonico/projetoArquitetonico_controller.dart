@@ -8,11 +8,11 @@ class ProjetoArquitetonicoController = _ProjetoArquitetonicoBase
 abstract class _ProjetoArquitetonicoBase with Store {
 
   double estimateValue;
-  double pricePerSquareMeter = 12;
-  double transportCosts = 50;
-  double plotingCosts = 40;
+  double pricePerSquareMeter = 15;
+  double transportCosts = 90;
+  double plotingCosts = 50;
   double othersCosts = 90;
-  double fixCosts = 70;
+  double fixCosts = 150;
   double howMuchFloorsIndex = 1;
   double buildingStandardIndex = 1.0;
   double quantitativeIndex = 1.0;
@@ -38,9 +38,9 @@ abstract class _ProjetoArquitetonicoBase with Store {
     if (hintText == "Edificação Térrea"){
       howMuchFloorsIndex = 1;
     } else if (hintText == "Edificação com 1 à 3 Pavimentos"){
-      howMuchFloorsIndex = 1.2;
+      howMuchFloorsIndex = 1.6;
     } else if (hintText == "Edificação com 4 ou mais pavimentos"){
-      howMuchFloorsIndex = 1.2;
+      howMuchFloorsIndex = 2;
     }
   }
 
@@ -68,13 +68,13 @@ abstract class _ProjetoArquitetonicoBase with Store {
     if (hintText2 == "Baixo"){
       buildingStandardIndex = 1;
     } else if (hintText2 == "Médio"){
-      buildingStandardIndex = 1.3;
+      buildingStandardIndex = 1.6;
     } else if (hintText2 == "Alto"){
-      buildingStandardIndex = 1.4;
+      buildingStandardIndex = 1.9;
     } else if (hintText2 == "Comercial"){
-      buildingStandardIndex = 1.3;
+      buildingStandardIndex = 1.7;
     } else if (hintText2 == "Industrial"){
-      buildingStandardIndex = 1.5;
+      buildingStandardIndex = 2.0;
     }
   }
 
@@ -82,7 +82,7 @@ abstract class _ProjetoArquitetonicoBase with Store {
   @action
   void calculatePrice(){
     double area = double.parse(areaValue);
-    estimateValue = (area*pricePerSquareMeter*howMuchFloorsIndex*quantitativeIndex*buildingStandardIndex) + transportCosts + plotingCosts + othersCosts + fixCosts;
+    estimateValue = double.parse(((area*pricePerSquareMeter*howMuchFloorsIndex*quantitativeIndex*buildingStandardIndex) +(area*pricePerSquareMeter*0.05) + (area*pricePerSquareMeter*0.01) + transportCosts + plotingCosts + othersCosts + fixCosts).toStringAsFixed(2));
   }
 
   String validateArea(){

@@ -16,7 +16,8 @@ class NotificationsService extends Disposable {
   @required String body,
 }) =>
       client.post("https://fcm.googleapis.com/fcm/send",
-      body: json.encode({"notification": {"body": "$body",
+      body: json.encode({"notification": {
+        "body": "$body",
         "title": "$title"},
         "priority": "high",
         "data": {"click_action": "FLUTTER_NOTIFICATION_CLICK",
