@@ -1,10 +1,14 @@
-# Flutter app to estimate the price of Civil Engineering Projects
+<h1 align="center">
+Mobile application to estimate the price of Civil Engineering Projects
 
 ![](https://github.com/manoellribeiro/budget-CivilEngineeringProjects/blob/master/images/appReview.png)
+</h1>
 
-## About this Project
+<h3 align="center">
+About this Project
+</h3>
 
-This project was made to simplify and optimize the budgeting process in a Junior Company called _Engetec Engenharia Jr_
+<p align="center">This project was made to simplify and optimize the budgeting process in a Junior Company called Engetec Engenharia Jr </p>
 
 ## Why?
 
