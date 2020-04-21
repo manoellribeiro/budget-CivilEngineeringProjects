@@ -1,7 +1,7 @@
 <h1 align="center">
 Mobile application to estimate the price of Civil Engineering Projects
 
-![](https://github.com/manoellribeiro/budget-CivilEngineeringProjects/blob/master/images/appReview.png)
+![](https://github.com/manoellribeiro/budget-CivilEngineeringProjects/blob/master/appReview.png)
 </h1>
 
 <h3 align="center">
