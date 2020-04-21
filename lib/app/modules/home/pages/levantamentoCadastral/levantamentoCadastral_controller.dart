@@ -17,22 +17,17 @@ abstract class _LevantamentoCadastralBase with Store {
   double othersCosts = 90;
   double fixCosts = 150;
 
-
   @observable
   String areaValue;
 
   @action
   changeArea(String value) => areaValue = value;
 
-
-
   @action
-  void calculatePrice(BuildContext context){
+  void calculatePrice(){
     double area = double.parse(areaValue);
     estimateValue = double.parse(((area*pricePerSquareMeter) + (area*pricePerSquareMeter*0.01) + transportCosts + plotingCosts + fixCosts + (area*pricePerSquareMeter)*0.05).toStringAsFixed(2));
   }
-
-
 
   String validateArea(){
     if (areaValue == null || areaValue.isEmpty){

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:precificacaodeprojetos/app/modules/home/models/budget_model.dart';
-import 'package:precificacaodeprojetos/app/modules/home/page/budgets_view/budgets_view_controller.dart';
+import 'package:precificacaodeprojetos/app/modules/home/pages/budgets_view/budgets_view_controller.dart';
 
 class BudgetsViewPage extends StatefulWidget {
   final String title;

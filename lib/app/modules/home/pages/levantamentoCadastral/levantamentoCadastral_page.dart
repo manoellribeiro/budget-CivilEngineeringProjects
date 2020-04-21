@@ -84,7 +84,7 @@ class _LevantamentoCadastralPageState extends State<LevantamentoCadastralPage> {
                           color: Color(0xff32425d),
                           disabledColor: Colors.grey,
                           onPressed: controller.validateForm ? (){
-                            controller.calculatePrice(context);
+                            controller.calculatePrice();
                             _showDialog();
                           }: null,
                           child: Text("Calcular",

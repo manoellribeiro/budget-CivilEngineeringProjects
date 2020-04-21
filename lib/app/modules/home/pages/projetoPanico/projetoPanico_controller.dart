@@ -7,40 +7,30 @@ class ProjetoPanicoController = _ProjetoPanicoBase
 
 abstract class _ProjetoPanicoBase with Store {
 
-
   double estimateValue;
   double pricePerSquareMeter = 9.5;
   double transportCosts = 90;
   double plotingCosts = 50;
   double othersCosts = 90;
   double fixCosts = 150;
-
-
   double propertyStandardIndex = 1;
   double thereIsFloorPlanIndex = 1.0;
-
-
   double projectOfSPADIndex = 1;
-
   double budgetAndQuantityIndex = 1;
-
-
 
   var propertyStandard = [
     "Baixo",
     "Médio",
     "Alto",
     "Comercial",
-    "Industrial"];
-
+    "Industrial"
+    ];
 
   @observable
   String areaValue;
 
   @action
   changeArea(String value) => areaValue = value;
-
-
 
   @observable
   String hintText = "Padrão da Edificação";
@@ -74,13 +64,11 @@ abstract class _ProjetoPanicoBase with Store {
     }
   }
 
-
   @observable
   bool projectOfSPDA = false;
 
   @action
   void changeProjectOfSPDA(bool value)=> projectOfSPDA = value;
-
 
   void thereIsProjectOfSPDA(){
     if(projectOfSPDA == true){
@@ -90,13 +78,11 @@ abstract class _ProjetoPanicoBase with Store {
     }
   }
 
-
   @observable
   bool thereIsQuantity = false;
 
   @action
   void changeThereIsQuantity(bool value)=> thereIsQuantity = value;
-
 
   void thereIsQuantityMethod(){
     if(thereIsQuantity == true){
@@ -105,7 +91,6 @@ abstract class _ProjetoPanicoBase with Store {
       budgetAndQuantityIndex = 1.0;
     }
   }
-
 
   @action
   void calculatePrice() {

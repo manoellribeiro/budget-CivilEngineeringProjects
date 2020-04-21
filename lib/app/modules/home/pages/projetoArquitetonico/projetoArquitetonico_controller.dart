@@ -17,18 +17,25 @@ abstract class _ProjetoArquitetonicoBase with Store {
   double buildingStandardIndex = 1.0;
   double quantitativeIndex = 1.0;
 
-
   @observable
   String areaValue;
 
   @action
   changeArea(String value) => areaValue = value;
 
+  var floorTypes = [
+    "Edificação Térrea",
+    "Edificação com 1 à 3 Pavimentos",
+    "Edificação com 4 ou mais pavimentos"
+    ];
 
-
-  var floorTypes = ["Edificação Térrea", "Edificação com 1 à 3 Pavimentos", "Edificação com 4 ou mais pavimentos"];
-  var standardTypes = ["Baixo", "Médio", "Alto", "Comercial", "Industrial"];
-
+  var standardTypes = [
+    "Baixo",
+    "Médio",
+    "Alto",
+    "Comercial",
+    "Industrial"
+    ];
 
   @observable
   String hintText = "Escolha o número de pavimentos";
@@ -44,7 +51,6 @@ abstract class _ProjetoArquitetonicoBase with Store {
     }
   }
 
-
   @observable
   bool quantitativeOfMaterials = false;
 
@@ -58,7 +64,6 @@ abstract class _ProjetoArquitetonicoBase with Store {
       quantitativeIndex = 1.5;
     }
   }
-
 
   @observable
   String hintText2 = "Escolha o padrão da edificação";
@@ -77,7 +82,6 @@ abstract class _ProjetoArquitetonicoBase with Store {
       buildingStandardIndex = 2.0;
     }
   }
-
 
   @action
   void calculatePrice(){

@@ -6,30 +6,32 @@ class ProjetoHidrossanitarioController = _ProjetoHidrossanitarioBase
     with _$ProjetoHidrossanitarioController;
 
 abstract class _ProjetoHidrossanitarioBase with Store {
+  
   double estimateValue;
   double pricePerSquareMeter = 9;
   double transportCosts = 90;
   double plotingCosts = 50;
   double othersCosts = 90;
   double fixCosts = 150;
-
-
   double propertyStandardIndex = 1;
   double quantityOfWetAreasIndex = 1.2;
   double thereIsFloorPlanIndex = 1.0;
   double projectOfHotWaterIndex = 1;
   double projectOfReuseOfWaterIndex = 1;
 
+  var quantityOfWetAreas = [
+    "De 1 à 3",
+    "De 3 à 5",
+    "Maior que 5"
+    ];
 
-
-  var quantityOfWetAreas = ["De 1 à 3","De 3 à 5","Maior que 5"];
   var propertyStandard = [
     "Baixo",
     "Médio",
     "Alto",
     "Comercial",
-    "Industrial"];
-
+    "Industrial"
+    ];
 
   @observable
   String areaValue;
@@ -90,7 +92,6 @@ abstract class _ProjetoHidrossanitarioBase with Store {
   @action
   void changeProjectOfHotWater(bool value)=> projectOfHotWater = value;
 
-
   void projectOfHotWaterMethod(){
     if(projectOfHotWater == true){
       projectOfHotWaterIndex = 1.5;
@@ -104,7 +105,6 @@ abstract class _ProjetoHidrossanitarioBase with Store {
 
   @action
   void changeProjectOfReuse(bool value)=> projectOfReuseOfWater = value;
-
 
   void projectOfReuseOfWaterMethod(){
     if(projectOfReuseOfWater == true){
@@ -138,7 +138,5 @@ abstract class _ProjetoHidrossanitarioBase with Store {
       return false;
     }
   }
-
-
 
 }

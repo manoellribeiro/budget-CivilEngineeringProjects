@@ -7,7 +7,6 @@ class ProjetoEletricoController = _ProjetoEletricoBase
 
 abstract class _ProjetoEletricoBase with Store {
 
-
   double estimateValue;
   double pricePerSquareMeter = 7;
   double transportCosts = 90;
@@ -18,22 +17,25 @@ abstract class _ProjetoEletricoBase with Store {
   double propertyStandardIndex = 1.0;
   double thereIsFloorPlanIndex = 1.0;
 
-
-  var distributionPanels = ["1","2","3+"];
+  var distributionPanels = [
+    "1",
+    "2",
+    "3+"
+    ];
 
   var propertyStandard = [
     "Baixo",
     "Médio",
     "Alto",
     "Comercial",
-    "Industrial"];
+    "Industrial"
+    ];
 
   @observable
   String areaValue;
 
   @action
   changeArea(String value) => areaValue = value;
-
 
   @observable
   String hintText = "Número de Quadros de Distribuição";
@@ -48,7 +50,6 @@ abstract class _ProjetoEletricoBase with Store {
       distributionPanelsIndex = 1.8;
     }
   }
-
 
   @observable
   String hintText2 = "Padrão da Edificação";
@@ -82,7 +83,6 @@ abstract class _ProjetoEletricoBase with Store {
       thereIsFloorPlanIndex = 1.0;
     }
   }
-
 
   @action
   void calculatePrice(){

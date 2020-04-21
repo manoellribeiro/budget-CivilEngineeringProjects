@@ -8,7 +8,6 @@ class FirebaseService extends Disposable {
   final Firestore firestore = Firestore.instance;
   final budgetsBox = Hive.box('budgetsBox');
 
-
   Future addData(int i) async{
     DocumentReference doc = await firestore.collection("Precificações").document(clientName);
     doc.setData({
@@ -17,16 +16,6 @@ class FirebaseService extends Disposable {
       'Precificação $i': budgetsBox.get(i),
     }, merge: true);
   }
-
-  Future readData() async{
-
-  }
-
-  Future removeData() async{
-
-  }
-
-
 
   //dispose will be called automatically
   @override

@@ -1,4 +1,5 @@
 class BudgetModel {
+  
   String name;
   String imageLocation;
   double estimateValue;
@@ -7,7 +8,6 @@ class BudgetModel {
   double othersCosts;
   double fixCosts;
   int id;
-
 
   BudgetModel({this.name,
       this.imageLocation,

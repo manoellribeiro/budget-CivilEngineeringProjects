@@ -48,11 +48,11 @@ mixin _$LevantamentoCadastralController on _LevantamentoCadastralBase, Store {
   }
 
   @override
-  void calculatePrice(BuildContext context) {
+  void calculatePrice() {
     final _$actionInfo =
         _$_LevantamentoCadastralBaseActionController.startAction();
     try {
-      return super.calculatePrice(context);
+      return super.calculatePrice();
     } finally {
       _$_LevantamentoCadastralBaseActionController.endAction(_$actionInfo);
     }
