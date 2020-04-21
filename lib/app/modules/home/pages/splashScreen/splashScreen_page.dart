@@ -22,7 +22,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     return Stack(
       children: <Widget>[
         SplashScreen(
-          seconds: 4,
+          seconds: 3,
           backgroundColor: Color(0xff32425d),
           navigateAfterSeconds: HomePage(),
           loaderColor: Colors.transparent,

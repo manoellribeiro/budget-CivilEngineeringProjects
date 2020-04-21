@@ -160,7 +160,7 @@ class _ParcialReviewPageState extends State<ParcialReviewPage> {
                             height: screenWidht*0.08,
                             child: Center(child: Row(
                               children: <Widget>[
-                                Icon(Icons.directions_car, color: Colors.white, size: 20),
+                                Icon(Icons.directions_car, color: Colors.white, size: screenHeight*0.03),
                                 Text("${budgetModel.transportCosts}", style: TextStyle(color: Colors.white),),
                                 Padding(
                                   padding: EdgeInsets.only(right: 5),
@@ -178,7 +178,7 @@ class _ParcialReviewPageState extends State<ParcialReviewPage> {
                               height: screenWidht*0.08,
                               child: Center(child: Row(
                                 children: <Widget>[
-                                  Icon(Icons.print, color: Colors.white, size: 20),
+                                  Icon(Icons.print, color: Colors.white, size: screenHeight*0.03),
                                   Text("${budgetModel.plotingCosts}", style: TextStyle(color: Colors.white),),
                                   Padding(
                                     padding: EdgeInsets.only(right: 5),
@@ -195,7 +195,7 @@ class _ParcialReviewPageState extends State<ParcialReviewPage> {
                             height: screenWidht*0.08,
                             child: Center(child: Row(
                               children: <Widget>[
-                                Icon(Icons.class_, color: Colors.white, size: 20),
+                                Icon(Icons.class_, color: Colors.white, size: screenHeight*0.03),
                                 Text("${budgetModel.othersCosts}", style: TextStyle(color: Colors.white),),
                                 Padding(
                                   padding: EdgeInsets.only(right: 5),
@@ -204,7 +204,7 @@ class _ParcialReviewPageState extends State<ParcialReviewPage> {
                             )),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            padding: EdgeInsets.only(left: 5),
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -213,11 +213,8 @@ class _ParcialReviewPageState extends State<ParcialReviewPage> {
                               height: screenWidht*0.08,
                               child: Center(child: Row(
                                 children: <Widget>[
-                                  Icon(Icons.business, color: Colors.white, size: 20),
-                                  Text("${budgetModel.fixCosts}", style: TextStyle(color: Colors.white),),
-                                  Padding(
-                                    padding: EdgeInsets.only(right: 5),
-                                  )
+                                  Icon(Icons.business, color: Colors.white, size: screenHeight*0.03),
+                                  Text("${budgetModel.fixCosts}", style: TextStyle(color: Colors.white)),
                                 ],
                               )),
                             ),
