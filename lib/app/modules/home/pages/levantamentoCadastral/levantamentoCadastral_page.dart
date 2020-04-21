@@ -64,7 +64,14 @@ class _LevantamentoCadastralPageState extends State<LevantamentoCadastralPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                SizedBox(child: Image.asset('images/levantamento.png'), width: screenWidht*0.1, height: screenHeight*0.2,),
+                Hero(
+                  tag: "levantamentoTag",
+                  child: SizedBox(
+                    child: Image.asset('images/levantamento.png'),
+                     width: screenWidht*0.1,
+                      height: screenHeight*0.2
+                      ),
+                ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
                 ),

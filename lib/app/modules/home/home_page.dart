@@ -113,10 +113,10 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
               Expanded(
                 flex: 1,
-                child: MenuItemWidget("Levantamento Cadastral",'images/levantamento.png', '/levantamento')),
+                child: MenuItemWidget("Levantamento Cadastral",'images/levantamento.png', '/levantamento', "levantamentoTag")),
               Expanded(
                 flex: 1,
-                child: MenuItemWidget("Projeto Arquitetônico",'images/arquitetonico.png', '/arquitetonico')),
+                child: MenuItemWidget("Projeto Arquitetônico",'images/arquitetonico.png', '/arquitetonico', "arquitetonicoTag")),
             ],
             ),
           ),
@@ -128,15 +128,15 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                Expanded(
                  flex: 1,
-                 child: MenuItemWidget("Projeto Elétrico",'images/eletrico.png', '/eletrico')),
+                 child: MenuItemWidget("Projeto Elétrico",'images/eletrico.png', '/eletrico', "eletricoTag")),
                Expanded(
                  flex: 1,
-                 child: MenuItemWidget("Projeto Hidrossanitário",'images/hidro.png','/hidro')),
+                 child: MenuItemWidget("Projeto Hidrossanitário",'images/hidro.png','/hidro', "hidrossanitarioTag")),
               ],),
           ), 
           Expanded(
             flex: 1,
-            child: MenuItemWidget("Pânico e Incêndio",'images/panico.png','/panico')),
+            child: MenuItemWidget("Pânico e Incêndio",'images/panico.png','/panico', "panicoTag")),
         ],
       ),
     );

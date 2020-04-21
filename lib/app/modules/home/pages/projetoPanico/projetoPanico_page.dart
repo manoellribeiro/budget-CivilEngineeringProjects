@@ -61,7 +61,14 @@ class _ProjetoPanicoPageState extends State<ProjetoPanicoPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                SizedBox(child: Image.asset('images/panico.png'), width: screenWidht*0.1, height: screenHeight*0.2,),
+                Hero(
+                  tag: "panicoTag",
+                  child: SizedBox(
+                    child: Image.asset('images/panico.png'),
+                    width: screenWidht*0.1,
+                    height: screenHeight*0.2
+                    ),
+                ),
                 Observer(
                   builder: (_){
                     return CheckboxListTile(

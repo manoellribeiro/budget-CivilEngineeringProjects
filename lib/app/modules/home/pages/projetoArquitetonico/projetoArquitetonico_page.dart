@@ -62,7 +62,13 @@ class _ProjetoArquitetonicoPageState extends State<ProjetoArquitetonicoPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                SizedBox(child: Image.asset('images/arquitetonico.png'), width: screenWidht*0.1, height: screenHeight*0.2,),
+                Hero(
+                  tag: "arquitetonicoTag",
+                  child: SizedBox(
+                    child: Image.asset('images/arquitetonico.png'),
+                    width: screenWidht*0.1,
+                    height: screenHeight*0.2,),
+                ),
                 Observer(
                   builder: (_){
                     return DropdownButton<String>(

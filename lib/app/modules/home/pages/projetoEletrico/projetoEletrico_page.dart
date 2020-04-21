@@ -62,7 +62,14 @@ class _ProjetoEletricoPageState extends State<ProjetoEletricoPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                SizedBox(child: Image.asset('images/eletrico.png'), width: screenWidht*0.1, height: screenHeight*0.2,),
+                Hero(
+                  tag: "eletricoTag",
+                  child: SizedBox(
+                    child: Image.asset('images/eletrico.png'),
+                    width: screenWidht*0.1,
+                    height: screenHeight*0.2
+                    ),
+                ),
                 Observer(
                   builder: (_){
                     return DropdownButton<String>(

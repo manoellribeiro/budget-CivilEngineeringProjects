@@ -4,8 +4,9 @@ class MenuItemWidget extends StatelessWidget {
   final String title;
   final String imageLocation;
   final String routeName;
+  final String heroTag;
 
-  const MenuItemWidget(this.title, this.imageLocation, this.routeName);
+  const MenuItemWidget(this.title, this.imageLocation, this.routeName, this.heroTag);
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +20,19 @@ class MenuItemWidget extends StatelessWidget {
       },
       child: Column(
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(imageLocation),
-                fit: BoxFit.contain,
+          Hero(
+            tag: heroTag,
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(imageLocation),
+                  fit: BoxFit.contain,
+                ),
+                borderRadius: BorderRadius.circular(20),
               ),
-              borderRadius: BorderRadius.circular(20),
+              width: screenWidth*0.5,
+              height: screenHeight*0.2,
             ),
-            width: screenWidth*0.5,
-            height: screenHeight*0.2,
           ),
           Text(
             title,

@@ -64,7 +64,14 @@ class _ProjetoHidrossanitarioPageState
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                SizedBox(child: Image.asset('images/hidro.png'), width: screenWidth*0.1, height: screenHeight*0.2,),
+                Hero(
+                  tag: "hidrossanitarioTag",
+                  child: SizedBox(
+                    child: Image.asset('images/hidro.png'),
+                    width: screenWidth*0.1,
+                    height: screenHeight*0.2
+                    ),
+                ),
                 Observer(
                   builder: (_){
                     return DropdownButton<String>(
