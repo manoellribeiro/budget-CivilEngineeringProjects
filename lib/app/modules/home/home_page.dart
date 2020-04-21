@@ -102,36 +102,42 @@ class _HomePageState extends State<HomePage> {
         title: Text(widget.title),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 5),
+      body: Column(
+        children: <Widget>[
+          SizedBox(height: screenHeight*0.05,),
+          Expanded(
+            flex: 1,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: MenuItemWidget("Levantamento Cadastral",'images/levantamento.png', '/levantamento')),
+              Expanded(
+                flex: 1,
+                child: MenuItemWidget("Projeto Arquitetônico",'images/arquitetonico.png', '/arquitetonico')),
+            ],
             ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text("Escolha um projeto", style: TextStyle(fontSize: 20),),
-            ),
-            MenuItemWidget("Levantamento Cadastral",'images/projetolevantamento.jpg', '/levantamento'),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-            ),
-            MenuItemWidget("Projeto Arquitetônico",'images/projetoarquitetonico.png', '/arquitetonico'),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-            ),
-            MenuItemWidget("Projeto Elétrico",'images/projetoeletrico.jpg', '/eletrico'),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-            ),
-            MenuItemWidget("Projeto Hidrossanitário",'images/projetohidro.jpg','/hidro'),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-            ),
-            MenuItemWidget("Pânico e Incêndio",'images/projetopanico.jpg','/panico'),
-          ],
-        ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+               Expanded(
+                 flex: 1,
+                 child: MenuItemWidget("Projeto Elétrico",'images/eletrico.png', '/eletrico')),
+               Expanded(
+                 flex: 1,
+                 child: MenuItemWidget("Projeto Hidrossanitário",'images/hidro.png','/hidro')),
+              ],),
+          ), 
+          Expanded(
+            flex: 1,
+            child: MenuItemWidget("Pânico e Incêndio",'images/panico.png','/panico')),
+        ],
       ),
     );
   }
