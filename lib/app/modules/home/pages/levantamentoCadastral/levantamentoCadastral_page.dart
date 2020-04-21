@@ -77,6 +77,18 @@ class _LevantamentoCadastralPageState extends State<LevantamentoCadastralPage> {
                 ),
                 Observer(
                   builder: (_){
+                    return CheckboxListTile(
+                      value: controller.thereIsConstructedArea,
+                      title: Text("Possui área construída", style: TextStyle(fontSize: 15.0),),
+                      onChanged: (value){
+                        controller.changeThereIsConstructedArea(value);
+                        controller.thereIsConstructedAreaMethod();
+                      },
+                    );
+                  },
+                ),
+                Observer(
+                  builder: (_){
                     return TextFieldWidget(
                         "Área (m²)", controller.validateArea(), controller.changeArea, TextInputType.number);
                   },

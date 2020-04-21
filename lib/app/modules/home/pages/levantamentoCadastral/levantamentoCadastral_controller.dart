@@ -16,6 +16,7 @@ abstract class _LevantamentoCadastralBase with Store {
   double plotingCosts = 50;
   double othersCosts = 90;
   double fixCosts = 150;
+  double constructedAreaIndex = 1;
 
   @observable
   String areaValue;
@@ -23,10 +24,18 @@ abstract class _LevantamentoCadastralBase with Store {
   @action
   changeArea(String value) => areaValue = value;
 
+  @observable
+  bool thereIsConstructedArea = true;
+
+  @action
+  void changeThereIsConstructedArea(bool value) => thereIsConstructedArea = value;
+
+  void thereIsConstructedAreaMethod() => thereIsConstructedArea ? constructedAreaIndex = 1 : constructedAreaIndex = 0.6;
+
   @action
   void calculatePrice(){
     double area = double.parse(areaValue);
-    estimateValue = double.parse(((area*pricePerSquareMeter) + (area*pricePerSquareMeter*0.01) + transportCosts + plotingCosts + fixCosts + (area*pricePerSquareMeter)*0.05).toStringAsFixed(2));
+    estimateValue = double.parse((((area*pricePerSquareMeter) + (area*pricePerSquareMeter*0.01) + transportCosts + plotingCosts + fixCosts + (area*pricePerSquareMeter)*0.05)* constructedAreaIndex).toStringAsFixed(2));
   }
 
   String validateArea(){

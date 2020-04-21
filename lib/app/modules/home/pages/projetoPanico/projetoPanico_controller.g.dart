@@ -85,22 +85,24 @@ mixin _$ProjetoPanicoController on _ProjetoPanicoBase, Store {
     }, _$projectOfSPDAAtom, name: '${_$projectOfSPDAAtom.name}_set');
   }
 
-  final _$thereIsQuantityAtom =
-      Atom(name: '_ProjetoPanicoBase.thereIsQuantity');
+  final _$thereIsOrientationTaxAtom =
+      Atom(name: '_ProjetoPanicoBase.thereIsOrientationTax');
 
   @override
-  bool get thereIsQuantity {
-    _$thereIsQuantityAtom.context.enforceReadPolicy(_$thereIsQuantityAtom);
-    _$thereIsQuantityAtom.reportObserved();
-    return super.thereIsQuantity;
+  bool get thereIsOrientationTax {
+    _$thereIsOrientationTaxAtom.context
+        .enforceReadPolicy(_$thereIsOrientationTaxAtom);
+    _$thereIsOrientationTaxAtom.reportObserved();
+    return super.thereIsOrientationTax;
   }
 
   @override
-  set thereIsQuantity(bool value) {
-    _$thereIsQuantityAtom.context.conditionallyRunInAction(() {
-      super.thereIsQuantity = value;
-      _$thereIsQuantityAtom.reportChanged();
-    }, _$thereIsQuantityAtom, name: '${_$thereIsQuantityAtom.name}_set');
+  set thereIsOrientationTax(bool value) {
+    _$thereIsOrientationTaxAtom.context.conditionallyRunInAction(() {
+      super.thereIsOrientationTax = value;
+      _$thereIsOrientationTaxAtom.reportChanged();
+    }, _$thereIsOrientationTaxAtom,
+        name: '${_$thereIsOrientationTaxAtom.name}_set');
   }
 
   final _$_ProjetoPanicoBaseActionController =
@@ -147,10 +149,10 @@ mixin _$ProjetoPanicoController on _ProjetoPanicoBase, Store {
   }
 
   @override
-  void changeThereIsQuantity(bool value) {
+  void changeThereIsOrientationTax(bool value) {
     final _$actionInfo = _$_ProjetoPanicoBaseActionController.startAction();
     try {
-      return super.changeThereIsQuantity(value);
+      return super.changeThereIsOrientationTax(value);
     } finally {
       _$_ProjetoPanicoBaseActionController.endAction(_$actionInfo);
     }

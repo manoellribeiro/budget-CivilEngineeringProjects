@@ -84,11 +84,11 @@ class _ProjetoPanicoPageState extends State<ProjetoPanicoPage> {
                 Observer(
                   builder: (_){
                     return CheckboxListTile(
-                      value: controller.thereIsQuantity,
-                      title: Text("Quantitativo de materiais", style: TextStyle(fontSize: 15.0),),
+                      value: controller.thereIsOrientationTax,
+                      title: Text("Taxa de Orientação", style: TextStyle(fontSize: 15.0),),
                       onChanged: (value){
-                        controller.changeThereIsQuantity(value);
-                        controller.thereIsQuantityMethod();
+                        controller.changeThereIsOrientationTax(value);
+                        controller.thereIsOrientationTaxMethod();
                       },
                     );
                   },

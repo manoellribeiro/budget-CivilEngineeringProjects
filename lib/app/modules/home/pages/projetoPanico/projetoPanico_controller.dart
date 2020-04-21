@@ -8,7 +8,7 @@ class ProjetoPanicoController = _ProjetoPanicoBase
 abstract class _ProjetoPanicoBase with Store {
 
   double estimateValue;
-  double pricePerSquareMeter = 9.5;
+  double pricePerSquareMeter = 4.0;
   double transportCosts = 90;
   double plotingCosts = 50;
   double othersCosts = 90;
@@ -16,7 +16,7 @@ abstract class _ProjetoPanicoBase with Store {
   double propertyStandardIndex = 1;
   double thereIsFloorPlanIndex = 1.0;
   double projectOfSPADIndex = 1;
-  double budgetAndQuantityIndex = 1;
+  double orientationTax = 1;
 
   var propertyStandard = [
     "Baixo",
@@ -79,23 +79,17 @@ abstract class _ProjetoPanicoBase with Store {
   }
 
   @observable
-  bool thereIsQuantity = false;
+  bool thereIsOrientationTax = false;
 
   @action
-  void changeThereIsQuantity(bool value)=> thereIsQuantity = value;
+  void changeThereIsOrientationTax(bool value) => thereIsOrientationTax = value;
 
-  void thereIsQuantityMethod(){
-    if(thereIsQuantity == true){
-      budgetAndQuantityIndex = 1.5;
-    }else {
-      budgetAndQuantityIndex = 1.0;
-    }
-  }
-
+  void thereIsOrientationTaxMethod() => thereIsOrientationTax ? orientationTax = 1.3 : orientationTax = 1;
+    
   @action
   void calculatePrice() {
     double area = double.parse(areaValue);
-    estimateValue = double.parse(((area*pricePerSquareMeter*thereIsFloorPlanIndex*propertyStandardIndex*projectOfSPADIndex*budgetAndQuantityIndex)+ (area*pricePerSquareMeter*0.05)+ (area*pricePerSquareMeter*0.01) + transportCosts + plotingCosts + othersCosts + fixCosts).toStringAsFixed(2));
+    estimateValue = double.parse((((area*pricePerSquareMeter*thereIsFloorPlanIndex*propertyStandardIndex*projectOfSPADIndex) + (area*pricePerSquareMeter*0.05)+ (area*pricePerSquareMeter*0.01) + transportCosts + plotingCosts + othersCosts + fixCosts) * orientationTax).toStringAsFixed(2));
   }
 
   String validateArea(){

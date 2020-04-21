@@ -33,6 +33,26 @@ mixin _$LevantamentoCadastralController on _LevantamentoCadastralBase, Store {
     }, _$areaValueAtom, name: '${_$areaValueAtom.name}_set');
   }
 
+  final _$thereIsConstructedAreaAtom =
+      Atom(name: '_LevantamentoCadastralBase.thereIsConstructedArea');
+
+  @override
+  bool get thereIsConstructedArea {
+    _$thereIsConstructedAreaAtom.context
+        .enforceReadPolicy(_$thereIsConstructedAreaAtom);
+    _$thereIsConstructedAreaAtom.reportObserved();
+    return super.thereIsConstructedArea;
+  }
+
+  @override
+  set thereIsConstructedArea(bool value) {
+    _$thereIsConstructedAreaAtom.context.conditionallyRunInAction(() {
+      super.thereIsConstructedArea = value;
+      _$thereIsConstructedAreaAtom.reportChanged();
+    }, _$thereIsConstructedAreaAtom,
+        name: '${_$thereIsConstructedAreaAtom.name}_set');
+  }
+
   final _$_LevantamentoCadastralBaseActionController =
       ActionController(name: '_LevantamentoCadastralBase');
 
@@ -42,6 +62,17 @@ mixin _$LevantamentoCadastralController on _LevantamentoCadastralBase, Store {
         _$_LevantamentoCadastralBaseActionController.startAction();
     try {
       return super.changeArea(value);
+    } finally {
+      _$_LevantamentoCadastralBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void changeThereIsConstructedArea(bool value) {
+    final _$actionInfo =
+        _$_LevantamentoCadastralBaseActionController.startAction();
+    try {
+      return super.changeThereIsConstructedArea(value);
     } finally {
       _$_LevantamentoCadastralBaseActionController.endAction(_$actionInfo);
     }
