@@ -3,9 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:hive/hive.dart';
+import 'package:precificacaodeprojetos/app/core/services/firebase_service.dart';
+import 'package:precificacaodeprojetos/app/core/services/notifications_service.dart';
 import 'package:precificacaodeprojetos/app/modules/home/components/textField/textField_widget.dart';
-import 'package:precificacaodeprojetos/app/modules/home/services/firebase_service.dart';
-import 'package:precificacaodeprojetos/app/modules/home/services/notifications_service.dart';
+
 
 class FirebaseAlertDialogWidget extends StatefulWidget {
 

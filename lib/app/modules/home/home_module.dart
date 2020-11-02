@@ -1,12 +1,9 @@
 import 'package:precificacaodeprojetos/app/modules/home/pages/budgets_view/budgets_view_controller.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/budgets_view/budgets_view_page.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/info/info_page.dart';
-import 'package:precificacaodeprojetos/app/modules/home/services/notifications_service.dart';
-import 'package:precificacaodeprojetos/app/modules/home/services/firebase_service.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/parcial_review/parcial_review_controller.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/parcial_review/parcial_review_page.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/splashScreen/splashScreen_page.dart';
-import 'package:precificacaodeprojetos/app/modules/home/services/local_storage_service.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/levantamentoCadastral/levantamentoCadastral_page.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/projetoArquitetonico/projetoArquitetonico_page.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/projetoEletrico/projetoEletrico_page.dart';
@@ -18,11 +15,8 @@ import 'package:precificacaodeprojetos/app/modules/home/pages/projetoPanico/proj
 class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        Bind((i) => NotificationsService()),
         Bind((i) => BudgetsViewController()),
-        Bind((i) => FirebaseService()),
         Bind((i) => ParcialReviewController()),
-        Bind((i) => LocalStorageService()),
       ];
 
   @override
