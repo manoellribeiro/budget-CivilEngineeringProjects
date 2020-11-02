@@ -26,19 +26,19 @@ class HomeModule extends ChildModule {
       ];
 
   @override
-  List<Router> get routers => [
-        Router('/', child: (_, args) => SplashScreenPage()),
-        Router('/home', child: (_, args) => HomePage()),
-        Router('/levantamento',
+  List<ModularRouter> get routers => [
+        ModularRouter('/', child: (_, args) => SplashScreenPage()),
+        ModularRouter('/home', child: (_, args) => HomePage()),
+        ModularRouter('/levantamento',
             child: (_, args) => LevantamentoCadastralPage(), transition: TransitionType.fadeIn),
-        Router('/arquitetonico',
+        ModularRouter('/arquitetonico',
             child: (_, args) => ProjetoArquitetonicoPage(), transition: TransitionType.fadeIn),
-        Router('/eletrico', child: (_, args) => ProjetoEletricoPage(), transition: TransitionType.fadeIn),
-        Router('/hidro', child: (_, args) => ProjetoHidrossanitarioPage(), transition: TransitionType.fadeIn),
-        Router('/panico', child: (_, args) => ProjetoPanicoPage(), transition: TransitionType.fadeIn),
-        Router('/parcialReview', child: (_, args) => ParcialReviewPage()),
-        Router('/budgetView', child: (_, args) => BudgetsViewPage()),
-        Router('/info', child: (_, args) => InfoPage()),
+        ModularRouter('/eletrico', child: (_, args) => ProjetoEletricoPage(), transition: TransitionType.fadeIn),
+        ModularRouter('/hidro', child: (_, args) => ProjetoHidrossanitarioPage(), transition: TransitionType.fadeIn),
+        ModularRouter('/panico', child: (_, args) => ProjetoPanicoPage(), transition: TransitionType.fadeIn),
+        ModularRouter('/parcialReview', child: (_, args) => ParcialReviewPage()),
+        ModularRouter('/budgetView', child: (_, args) => BudgetsViewPage()),
+        ModularRouter('/info', child: (_, args) => InfoPage()),
       ];
 
   static Inject get to => Inject<HomeModule>.of();
