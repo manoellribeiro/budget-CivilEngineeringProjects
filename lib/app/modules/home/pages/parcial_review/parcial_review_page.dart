@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:precificacaodeprojetos/app/modules/home/components/firebaseAlertDialog/firebaseAlertDialog_widget.dart';
+import 'package:precificacaodeprojetos/app/core/components/firebaseAlertDialog/firebaseAlertDialog_widget.dart';
 import 'package:precificacaodeprojetos/app/modules/home/models/budget_model.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/parcial_review/parcial_review_controller.dart';
 

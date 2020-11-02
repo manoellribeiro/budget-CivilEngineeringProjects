@@ -1,6 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:precificacaodeprojetos/app/modules/home/components/menuItem/menuItem_widget.dart';
+import 'package:precificacaodeprojetos/app/core/components/menuItem/menuItem_widget.dart';
 
 
 
