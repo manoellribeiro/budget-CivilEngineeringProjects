@@ -1,34 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:precificacaodeprojetos/app/core/assets/images/Images.dart';
 import 'package:precificacaodeprojetos/app/core/components/alertDialog/alertDialog_widget.dart';
 import 'package:precificacaodeprojetos/app/core/components/textField/textField_widget.dart';
 import 'package:precificacaodeprojetos/app/core/services/local_storage_service.dart';
+import 'package:precificacaodeprojetos/app/core/values/strings.dart';
 import 'package:precificacaodeprojetos/app/modules/home/models/budget_model.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/projetoEletrico/projetoEletrico_controller.dart';
 
 class ProjetoEletricoPage extends StatefulWidget {
-  final String title;
-  const ProjetoEletricoPage({Key key, this.title = "Projeto Eletrico"})
-      : super(key: key);
-
   @override
   _ProjetoEletricoPageState createState() => _ProjetoEletricoPageState();
 }
 
 class _ProjetoEletricoPageState extends State<ProjetoEletricoPage> {
-
   final controller = ProjetoEletricoController();
   final service = LocalStorageService();
   final budget = BudgetModel();
 
-  _showDialog(){
+  _showDialog() {
     return showDialog(
         context: context,
-        builder: (_){
-          return AlertDialogWidget(service,
+        builder: (_) {
+          return AlertDialogWidget(
+            service,
             budget,
-            "Projeto Elétrico",
-            'images/eletrico.png',
+            Strings.projetoEletrico,
+            Images.eletricoIllustration,
             controller.transportCosts,
             controller.plotingCosts,
             controller.othersCosts,
@@ -38,7 +36,6 @@ class _ProjetoEletricoPageState extends State<ProjetoEletricoPage> {
           );
         });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +50,9 @@ class _ProjetoEletricoPageState extends State<ProjetoEletricoPage> {
           ),
         ),
         backgroundColor: Color(0xff32425d),
-        title: Text("Projeto Elétrico"),
-        centerTitle: true,),
+        title: Text(Strings.projetoEletrico),
+        centerTitle: true,
+      ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
           padding: EdgeInsets.all(10.0),
@@ -65,17 +63,17 @@ class _ProjetoEletricoPageState extends State<ProjetoEletricoPage> {
                 Hero(
                   tag: "eletricoTag",
                   child: SizedBox(
-                    child: Image.asset('images/eletrico.png'),
-                    width: screenWidht*0.1,
-                    height: screenHeight*0.2
-                    ),
+                      child: Image.asset(Images.eletricoIllustration),
+                      width: screenWidht * 0.1,
+                      height: screenHeight * 0.2),
                 ),
                 Observer(
-                  builder: (_){
+                  builder: (_) {
                     return DropdownButton<String>(
                         hint: Text(controller.hintText),
                         icon: Icon(Icons.arrow_drop_down),
-                        items: controller.distributionPanels.map((String dropDownStringItem){
+                        items: controller.distributionPanels
+                            .map((String dropDownStringItem) {
                           return DropdownMenuItem<String>(
                             value: dropDownStringItem,
                             child: Text(dropDownStringItem),
@@ -84,18 +82,18 @@ class _ProjetoEletricoPageState extends State<ProjetoEletricoPage> {
                         onChanged: (value) {
                           controller.hintText = value;
                           controller.howMuchDistributionPanels();
-                        }
-                    );
+                        });
                   },
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 30),
                   child: Observer(
-                    builder: (_){
+                    builder: (_) {
                       return DropdownButton<String>(
                           hint: Text(controller.hintText2),
                           icon: Icon(Icons.arrow_drop_down),
-                          items: controller.propertyStandard.map((String dropDownStringItem){
+                          items: controller.propertyStandard
+                              .map((String dropDownStringItem) {
                             return DropdownMenuItem<String>(
                               value: dropDownStringItem,
                               child: Text(dropDownStringItem),
@@ -104,17 +102,19 @@ class _ProjetoEletricoPageState extends State<ProjetoEletricoPage> {
                           onChanged: (value) {
                             controller.hintText2 = value;
                             controller.standardIndexMethod();
-                          }
-                      );
+                          });
                     },
                   ),
                 ),
                 Observer(
-                  builder: (_){
+                  builder: (_) {
                     return CheckboxListTile(
                       value: controller.thereIsFloorPlan,
-                      title: Text("Já possui as plantas?", style: TextStyle(fontSize: 15.0),),
-                      onChanged: (value){
+                      title: Text(
+                        Strings.pickBuildingStandard,
+                        style: TextStyle(fontSize: 15.0),
+                      ),
+                      onChanged: (value) {
                         controller.changeThereIsFloorPlan(value);
                         controller.thereIsFloorPlanMethod();
                       },
@@ -122,33 +122,40 @@ class _ProjetoEletricoPageState extends State<ProjetoEletricoPage> {
                   },
                 ),
                 Observer(
-                  builder: (_){
+                  builder: (_) {
                     return TextFieldWidget(
-                        "Área (m²)", controller.validateArea(), controller.changeArea, TextInputType.number);
+                        Strings.area,
+                        controller.validateArea(),
+                        controller.changeArea,
+                        TextInputType.number);
                   },
                 ),
-
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10.0),
-                  child: Observer(
-                    builder: (_){
-                      return Container(
-                        height: screenHeight*0.08,
-                        child: RaisedButton(
-                          color: Color(0xff32425d),
-                          disabledColor: Colors.grey,
-                          onPressed: controller.validateForm?() {
-                            controller.calculatePrice();
-                            _showDialog();
-                          }: null,
-                          child: Text("Calcular",
-                              style:
-                              TextStyle(color: Colors.white, fontSize: 25)),
-                        ),
-                      );
-                    },
-                  )
-                ),
+                    padding: EdgeInsets.symmetric(vertical: 10.0),
+                    child: Observer(
+                      builder: (_) {
+                        return Container(
+                          height: screenHeight * 0.08,
+                          child: RaisedButton(
+                            color: Color(0xff32425d),
+                            disabledColor: Colors.grey,
+                            onPressed: controller.validateForm
+                                ? () {
+                                    controller.calculatePrice();
+                                    _showDialog();
+                                  }
+                                : null,
+                            child: Text(
+                              Strings.calculateButton,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )),
               ],
             ),
           )),

@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:precificacaodeprojetos/app/core/assets/images/Images.dart';
 import 'package:precificacaodeprojetos/app/core/components/alertDialog/alertDialog_widget.dart';
 import 'package:precificacaodeprojetos/app/core/components/textField/textField_widget.dart';
 import 'package:precificacaodeprojetos/app/core/services/local_storage_service.dart';
+import 'package:precificacaodeprojetos/app/core/values/strings.dart';
 import 'package:precificacaodeprojetos/app/modules/home/models/budget_model.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/projetoHidrossanitario/projetoHidrossanitario_controller.dart';
 
 class ProjetoHidrossanitarioPage extends StatefulWidget {
-  final String title;
-  const ProjetoHidrossanitarioPage(
-      {Key key, this.title = "Projeto Hidrossanitário"})
-      : super(key: key);
-
+  
   @override
   _ProjetoHidrossanitarioPageState createState() =>
       _ProjetoHidrossanitarioPageState();
@@ -30,8 +28,8 @@ class _ProjetoHidrossanitarioPageState
         builder: (_){
           return AlertDialogWidget(service,
             budget,
-            "Projeto Hidrossanitário",
-            'images/hidro.png',
+            Strings.projetoHidrossanitario,
+            Images.hidroIllustration,
             controller.transportCosts,
             controller.plotingCosts,
             controller.othersCosts,
@@ -55,7 +53,7 @@ class _ProjetoHidrossanitarioPageState
           ),
         ),
         backgroundColor: Color(0xff32425d),
-        title: Text("Projeto Hidrossanitário"),
+        title: Text(Strings.projetoHidrossanitario),
         centerTitle: true,),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -67,9 +65,9 @@ class _ProjetoHidrossanitarioPageState
                 Hero(
                   tag: "hidrossanitarioTag",
                   child: SizedBox(
-                    child: Image.asset('images/hidro.png'),
-                    width: screenWidth*0.1,
-                    height: screenHeight*0.2
+                    child: Image.asset(Images.hidroIllustration),
+                    width: screenWidth * 0.1,
+                    height: screenHeight * 0.2
                     ),
                 ),
                 Observer(
@@ -94,7 +92,7 @@ class _ProjetoHidrossanitarioPageState
                   builder: (_){
                     return CheckboxListTile(
                       value: controller.projectOfHotWater,
-                      title: Text("Água quente", style: TextStyle(fontSize: 15.0),),
+                      title: Text(Strings.hotWater, style: TextStyle(fontSize: 15.0),),
                       onChanged: (value){
                         controller.changeProjectOfHotWater(value);
                         controller.projectOfHotWaterMethod();
@@ -106,7 +104,7 @@ class _ProjetoHidrossanitarioPageState
                   builder: (_){
                     return CheckboxListTile(
                       value: controller.projectOfReuseOfWater,
-                      title: Text("Aproveitamento e reuso de água", style: TextStyle(fontSize: 15.0),),
+                      title: Text(Strings.waterUseAndReuse, style: TextStyle(fontSize: 15.0),),
                       onChanged: (value){
                         controller.changeProjectOfReuse(value);
                         controller.projectOfReuseOfWaterMethod();
@@ -118,7 +116,7 @@ class _ProjetoHidrossanitarioPageState
                   builder: (_){
                     return CheckboxListTile(
                       value: controller.thereIsFloorPlan,
-                      title: Text("Já possui as plantas?", style: TextStyle(fontSize: 15.0),),
+                      title: Text(Strings.hasConstructionsPlans, style: TextStyle(fontSize: 15.0),),
                       onChanged: (value){
                         controller.changeThereIsFloorPlan(value);
                         controller.thereIsFloorPlanMethod();
@@ -150,7 +148,7 @@ class _ProjetoHidrossanitarioPageState
                 Observer(
                   builder: (_){
                     return TextFieldWidget(
-                        "Área (m²)", controller.validateArea(), controller.changeArea, TextInputType.number);
+                        Strings.area, controller.validateArea(), controller.changeArea, TextInputType.number);
                   },
                 ),
                 Padding(
@@ -166,7 +164,7 @@ class _ProjetoHidrossanitarioPageState
                             controller.calculatePrice();
                             _showDialog();
                           }: null,
-                          child: Text("Calcular",
+                          child: Text(Strings.calculateButton,
                               style:
                               TextStyle(color: Colors.white, fontSize: 25)),
                         ),

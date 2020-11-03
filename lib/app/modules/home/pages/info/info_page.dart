@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:precificacaodeprojetos/app/core/assets/images/Images.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class InfoPage extends StatefulWidget {
@@ -48,7 +49,7 @@ class _InfoPageState extends State<InfoPage> {
                     width: screenWidht*0.6,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage("images/logobranco.jpeg"),
+                            image: AssetImage(Images.logo),
                             fit: BoxFit.contain
                         )
                     ),
@@ -62,7 +63,7 @@ class _InfoPageState extends State<InfoPage> {
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: CircleAvatar(
                       radius: screenWidht*0.1,
-                      backgroundImage: AssetImage('images/manoel.jpeg'),
+                      backgroundImage: AssetImage(Images.manoelPhoto),
                     ),
                   ),
                   Text("Desenvolvido por Manoel Ribeiro"),

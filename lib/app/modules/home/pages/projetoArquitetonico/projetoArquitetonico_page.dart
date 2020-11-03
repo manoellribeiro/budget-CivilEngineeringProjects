@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:precificacaodeprojetos/app/core/assets/images/Images.dart';
 import 'package:precificacaodeprojetos/app/core/components/alertDialog/alertDialog_widget.dart';
 import 'package:precificacaodeprojetos/app/core/components/textField/textField_widget.dart';
 import 'package:precificacaodeprojetos/app/core/services/local_storage_service.dart';
+import 'package:precificacaodeprojetos/app/core/values/strings.dart';
 import 'package:precificacaodeprojetos/app/modules/home/models/budget_model.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/projetoArquitetonico/projetoArquitetonico_controller.dart';
 
 class ProjetoArquitetonicoPage extends StatefulWidget {
-  final String title;
-  const ProjetoArquitetonicoPage({Key key, this.title = "Projeto Arquitetônico"})
-      : super(key: key);
 
   @override
   _ProjetoArquitetonicoPageState createState() =>
@@ -28,8 +27,8 @@ class _ProjetoArquitetonicoPageState extends State<ProjetoArquitetonicoPage> {
         builder: (_){
           return AlertDialogWidget(service,
             budget,
-            "Projeto Arquitetônico",
-            'images/arquitetonico.png',
+            Strings.projetoArquitetonico,
+            Images.arquitetonicoIllustration,
             controller.transportCosts,
             controller.plotingCosts,
             controller.othersCosts,
@@ -54,7 +53,7 @@ class _ProjetoArquitetonicoPageState extends State<ProjetoArquitetonicoPage> {
           ),
         ),
         backgroundColor: Color(0xff32425d),
-        title: Text("Projeto Arquitetônico"),
+        title: Text(Strings.projetoArquitetonico),
         centerTitle: true,),
       body: SingleChildScrollView(
           padding: EdgeInsets.all(10.0),
@@ -65,7 +64,7 @@ class _ProjetoArquitetonicoPageState extends State<ProjetoArquitetonicoPage> {
                 Hero(
                   tag: "arquitetonicoTag",
                   child: SizedBox(
-                    child: Image.asset('images/arquitetonico.png'),
+                    child: Image.asset(Images.arquitetonicoIllustration),
                     width: screenWidht*0.1,
                     height: screenHeight*0.2,),
                 ),
@@ -112,7 +111,7 @@ class _ProjetoArquitetonicoPageState extends State<ProjetoArquitetonicoPage> {
                   builder: (_){
                     return CheckboxListTile(
                       value: controller.quantitativeOfMaterials,
-                      title: Text("Quantitativo de Materiais?", style: TextStyle(fontSize: 15.0),),
+                      title: Text(Strings.materialQuantitative, style: TextStyle(fontSize: 15.0),),
                       onChanged: (value){
                         controller.quantitativeMethod();
                         controller.changeQuantitative(value);
@@ -123,7 +122,7 @@ class _ProjetoArquitetonicoPageState extends State<ProjetoArquitetonicoPage> {
                 Observer(
                   builder: (_){
                     return TextFieldWidget(
-                        "Área (m²)", controller.validateArea(), controller.changeArea, TextInputType.number);
+                        Strings.area, controller.validateArea(), controller.changeArea, TextInputType.number);
                   },
                 ),
                 Padding(
@@ -139,7 +138,7 @@ class _ProjetoArquitetonicoPageState extends State<ProjetoArquitetonicoPage> {
                             controller.calculatePrice();
                             _showDialog();
                           }: null,
-                          child: Text("Calcular",
+                          child: Text(Strings.calculateButton,
                               style:
                               TextStyle(color: Colors.white, fontSize: 25)),
                         ),

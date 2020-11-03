@@ -1,46 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:precificacaodeprojetos/app/core/assets/images/Images.dart';
 import 'package:precificacaodeprojetos/app/core/components/alertDialog/alertDialog_widget.dart';
 import 'package:precificacaodeprojetos/app/core/components/textField/textField_widget.dart';
 import 'package:precificacaodeprojetos/app/core/services/local_storage_service.dart';
+import 'package:precificacaodeprojetos/app/core/values/strings.dart';
 import 'package:precificacaodeprojetos/app/modules/home/models/budget_model.dart';
 import 'package:precificacaodeprojetos/app/modules/home/pages/levantamentoCadastral/levantamentoCadastral_controller.dart';
 
 class LevantamentoCadastralPage extends StatefulWidget {
-  final String title;
-  const LevantamentoCadastralPage(
-      {Key key, this.title = "Levantamento Cadastral"})
-      : super(key: key);
-
   @override
   _LevantamentoCadastralPageState createState() =>
       _LevantamentoCadastralPageState();
 }
 
 class _LevantamentoCadastralPageState extends State<LevantamentoCadastralPage> {
-
   final controller = LevantamentoCadastralController();
   final service = LocalStorageService();
   final budget = BudgetModel();
 
-  _showDialog(){
+  _showDialog() {
     return showDialog(
         context: context,
-        builder: (_){
-          return AlertDialogWidget(service,
-              budget,
-              "Levantamento Cadastral",
-              'images/levantamento.png',
-              controller.transportCosts,
-              controller.plotingCosts,
-              controller.othersCosts,
-              controller.fixCosts,
-              '/levantamento',
-              controller.estimateValue,
-              );
+        builder: (_) {
+          return AlertDialogWidget(
+            service,
+            budget,
+            Strings.levantamentoCadastral,
+            Images.levantamentoIllustration,
+            controller.transportCosts,
+            controller.plotingCosts,
+            controller.othersCosts,
+            controller.fixCosts,
+            '/levantamento',
+            controller.estimateValue,
+          );
         });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +51,9 @@ class _LevantamentoCadastralPageState extends State<LevantamentoCadastralPage> {
           ),
         ),
         backgroundColor: Color(0xff32425d),
-        title: Text("Levantamento Cadastral"),
-        centerTitle: true,),
+        title: Text(Strings.levantamentoCadastral),
+        centerTitle: true,
+      ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
           padding: EdgeInsets.all(10.0),
@@ -67,20 +64,22 @@ class _LevantamentoCadastralPageState extends State<LevantamentoCadastralPage> {
                 Hero(
                   tag: "levantamentoTag",
                   child: SizedBox(
-                    child: Image.asset('images/levantamento.png'),
-                     width: screenWidht*0.1,
-                      height: screenHeight*0.2
-                      ),
+                      child: Image.asset(Images.levantamentoIllustration),
+                      width: screenWidht * 0.1,
+                      height: screenHeight * 0.2),
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
                 ),
                 Observer(
-                  builder: (_){
+                  builder: (_) {
                     return CheckboxListTile(
                       value: controller.thereIsConstructedArea,
-                      title: Text("Possui área construída", style: TextStyle(fontSize: 15.0),),
-                      onChanged: (value){
+                      title: Text(
+                        Strings.requiredField,
+                        style: TextStyle(fontSize: 15.0),
+                      ),
+                      onChanged: (value) {
                         controller.changeThereIsConstructedArea(value);
                         controller.thereIsConstructedAreaMethod();
                       },
@@ -88,31 +87,39 @@ class _LevantamentoCadastralPageState extends State<LevantamentoCadastralPage> {
                   },
                 ),
                 Observer(
-                  builder: (_){
+                  builder: (_) {
                     return TextFieldWidget(
-                        "Área (m²)", controller.validateArea(), controller.changeArea, TextInputType.number);
+                        Strings.area,
+                        controller.validateArea(),
+                        controller.changeArea,
+                        TextInputType.number);
                   },
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10.0),
                   child: Container(
-                    height: screenHeight*0.08,
-                    child: Observer(
-                      builder: (_){
-                        return RaisedButton(
-                          color: Color(0xff32425d),
-                          disabledColor: Colors.grey,
-                          onPressed: controller.validateForm ? (){
-                            controller.calculatePrice();
-                            _showDialog();
-                          }: null,
-                          child: Text("Calcular",
-                              style:
-                              TextStyle(color: Colors.white, fontSize: 25)),
-                        );
-                      },
-                    )
-                  ),
+                      height: screenHeight * 0.08,
+                      child: Observer(
+                        builder: (_) {
+                          return RaisedButton(
+                            color: Color(0xff32425d),
+                            disabledColor: Colors.grey,
+                            onPressed: controller.validateForm
+                                ? () {
+                                    controller.calculatePrice();
+                                    _showDialog();
+                                  }
+                                : null,
+                            child: Text(
+                              Strings.calculateButton,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                              ),
+                            ),
+                          );
+                        },
+                      )),
                 ),
               ],
             ),

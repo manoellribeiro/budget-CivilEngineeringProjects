@@ -1,5 +1,6 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
+import 'package:precificacaodeprojetos/app/core/assets/animations/Animations.dart';
 import 'package:precificacaodeprojetos/app/core/services/local_storage_service.dart';
 import 'package:precificacaodeprojetos/app/modules/home/models/budget_model.dart';
 
@@ -44,7 +45,7 @@ class AlertDialogWidget extends StatelessWidget {
               topRight: Radius.circular(20),
             )
           ),
-          child: Center(child: FlareActor("images/Check.flr", animation: "Untitled",)) ),
+          child: Center(child: FlareActor(Animations.check, animation: "Untitled",)) ),
       content: Container(
         child: SingleChildScrollView(
           child: Column(

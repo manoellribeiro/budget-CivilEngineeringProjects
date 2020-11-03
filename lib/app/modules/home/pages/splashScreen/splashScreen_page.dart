@@ -1,6 +1,8 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:precificacaodeprojetos/app/core/assets/animations/Animations.dart';
+import 'package:precificacaodeprojetos/app/core/assets/images/Images.dart';
 import 'package:precificacaodeprojetos/app/modules/home/home_page.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -36,7 +38,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                 width: screenWidht*0.6,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/logo.jpg"),
+                        image: AssetImage(Images.logo),
                         fit: BoxFit.contain
                     )
                 ),
@@ -47,7 +49,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                 height: screenHeight*0.15,
                 width: screenWidht*0.2,
                 child: FlareActor(
-                  "images/loading.flr",
+                  Animations.loading,
                   animation: "spin2",
                   fit: BoxFit.contain
                 ),

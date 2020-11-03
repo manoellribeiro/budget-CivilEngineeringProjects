@@ -1,16 +1,13 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:precificacaodeprojetos/app/core/assets/images/Images.dart';
 import 'package:precificacaodeprojetos/app/core/components/menuItem/menuItem_widget.dart';
+import 'package:precificacaodeprojetos/app/core/values/strings.dart';
 
 
 
 class HomePage extends StatefulWidget {
-  final String title;
-  const HomePage(
-      {Key key, this.title = "Precificação - Engetec"})
-      : super(key: key);
-
-
+  
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -99,7 +96,7 @@ class _HomePageState extends State<HomePage> {
             )
         ),
         backgroundColor: Color(0xff32425d),
-        title: Text(widget.title),
+        title: Text(Strings.homeTitle),
         centerTitle: true,
       ),
       body: Column(
@@ -113,10 +110,10 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
               Expanded(
                 flex: 1,
-                child: MenuItemWidget("Levantamento Cadastral",'images/levantamento.png', '/levantamento', "levantamentoTag")),
+                child: MenuItemWidget(Strings.levantamentoCadastral, Images.levantamentoIllustration, '/levantamento', "levantamentoTag")),
               Expanded(
                 flex: 1,
-                child: MenuItemWidget("Projeto Arquitetônico",'images/arquitetonico.png', '/arquitetonico', "arquitetonicoTag")),
+                child: MenuItemWidget(Strings.projetoArquitetonico, Images.arquitetonicoIllustration, '/arquitetonico', "arquitetonicoTag")),
             ],
             ),
           ),
@@ -128,15 +125,15 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                Expanded(
                  flex: 1,
-                 child: MenuItemWidget("Projeto Elétrico",'images/eletrico.png', '/eletrico', "eletricoTag")),
+                 child: MenuItemWidget(Strings.projetoEletrico, Images.eletricoIllustration, '/eletrico', "eletricoTag")),
                Expanded(
                  flex: 1,
-                 child: MenuItemWidget("Projeto Hidrossanitário",'images/hidro.png','/hidro', "hidrossanitarioTag")),
+                 child: MenuItemWidget(Strings.projetoHidrossanitario, Images.hidroIllustration,'/hidro', "hidrossanitarioTag")),
               ],),
           ), 
           Expanded(
             flex: 1,
-            child: MenuItemWidget("Pânico e Incêndio",'images/panico.png','/panico', "panicoTag")),
+            child: MenuItemWidget(Strings.panicoIncendio, Images.panicoIllustration, '/panico', "panicoTag")),
         ],
       ),
     );

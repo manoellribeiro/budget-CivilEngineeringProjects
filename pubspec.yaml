@@ -49,16 +49,8 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-    - images/logo.jpg
-    - images/logobranco.jpeg
-    - images/manoel.jpeg
-    - images/arquitetonico.png
-    - images/levantamento.png
-    - images/eletrico.png
-    - images/hidro.png
-    - images/panico.png
-    - images/loading.flr
-    - images/Check.flr
+    - lib/app/core/assets/images/
+    - lib/app/core/assets/animations/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
